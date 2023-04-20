@@ -75,28 +75,6 @@ public class GUIPresentation extends JFrame {
         });
     }
 
-    /*private class Listener implements ActionListener{
-        private ImageIcon image;
-        @Override
-        public void actionPerformed(ActionEvent e){
-            imageLabel.setIcon(null);
-            if(e.getSource() == myPhoto)
-            {
-                System.out.println("Photo Button Pressed");
-                this.image = new ImageIcon(getClass().getResource("/resources/foto.jpg"));
-                imageLabel.setIcon(this.image);
-            }
-            else if(e.getSource() == myHobby && e.c)
-            {
-                System.out.println("Hobby Button Pressed");
-                this.image = new ImageIcon(getClass().getResource("/resources/hobby.jpg"));
-                imageLabel.setIcon(this.image);
-            }
-            revalidate();
-            repaint();
-        }
-    }*/
-
     /**
      * inner class that extends an Adapter Class or implements Listeners used by GUI class
      */
@@ -110,14 +88,16 @@ public class GUIPresentation extends JFrame {
 
         @Override
         public void keyPressed(KeyEvent e) {
-            imageLabel.setIcon(null);
-            System.out.println("key M is Pressed");
-            expectativesText.setText("My expectation is to be an innovative programmer, with extensive scientific knowledge");
-            expectativesText.setBackground(null);
-            expectativesText.setForeground(Color.black);
-            containerIMages.add(expectativesText);
-            revalidate();
-            repaint();
+            if (e.getKeyChar() == 'm' || e.getKeyChar() == 'M') {
+                imageLabel.setIcon(null);
+                System.out.println("key M is Pressed");
+                expectativesText.setText("My expectation is to be an innovative programmer, with extensive scientific knowledge");
+                expectativesText.setBackground(null);
+                expectativesText.setForeground(Color.black);
+                containerIMages.add(expectativesText);
+                revalidate();
+                repaint();
+            }
         }
 
         @Override
